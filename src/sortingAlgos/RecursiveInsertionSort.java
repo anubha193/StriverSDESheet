@@ -1,23 +1,24 @@
 package sortingAlgos;
-import java.util.*;
-public class InsertionSort {
-    static int[] insertionSort(int arr[],int n)
-    { 
-    	for (int i = 1; i < n; ++i) {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-    	
+
+import java.util.Scanner;
+
+public class RecursiveInsertionSort {
+    static void insertion(int[] arr,int n,int i)
+    {
+    	if(i==n)return;
+    	int j=i-1;
+    	while(j>=0 && arr[j]>arr[j+1])
+    	{
+    		int temp=arr[j+1];
+    		arr[j+1]=arr[j];
+    		arr[j]=temp;
+    		j--;
+    	}
+    	insertion(arr,n,i+1);
     }
-    return arr;
-}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        Scanner sc=new Scanner(System.in);
+		Scanner sc=new Scanner(System.in);
         System.out.println("Enter the size of array=");
         int n=sc.nextInt();
         int arr[]=new int[n];
@@ -28,10 +29,10 @@ public class InsertionSort {
         for(int i=0;i<n;i++)
         	System.out.print(arr[i]+" ");
         System.out.println();
+        insertion(arr,n,1);
         System.out.println("After sorting array Elements is=");
-        int temp[]=insertionSort(arr,n);
         for(int i=0;i<n;i++)
-        	System.out.print(temp[i]+" ");
+        	System.out.print(arr[i]+" "); 
 	}
 
 }
