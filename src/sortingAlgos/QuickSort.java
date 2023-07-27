@@ -37,26 +37,22 @@ public class QuickSort {
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Scanner sc=new Scanner(System.in);
-//        System.out.println("Enter the size of array=");
-//        int n=sc.nextInt();
-//        int arr[]=new int[n];
-//        System.out.println("Enter the elements of array=");
-//        for(int i=0;i<n;i++)
-//        	arr[i]=sc.nextInt();
-//        System.out.println("the Array elements is=");
-//        for(int i=0;i<n;i++)
-//        	System.out.print(arr[i]+" ");
-//        System.out.println();
-//        int p=partition(0,n-1,arr);
-		int arr[]={ 24, 18, 38 ,43, 14 ,40, 1 ,54 };
-        quickSort(0,arr.length-1,arr);
-        System.out.println("After sorting array Elements is=");
-        for(int i=0;i<arr.length;i++)
+		Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of array=");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        System.out.println("Enter the elements of array=");
+        for(int i=0;i<n;i++)
+        	arr[i]=sc.nextInt();
+        System.out.println("the Array elements is=");
+        for(int i=0;i<n;i++)
         	System.out.print(arr[i]+" ");
-
-
-
-	}
+        System.out.println();
+        int p=partition(0,n-1,arr);
+        quickSort(0,n-1,arr);
+        System.out.println("After sorting array Elements is=");
+        for(int i=0;i<n;i++)
+        	System.out.print(arr[i]+" ");
+}
 
 }
